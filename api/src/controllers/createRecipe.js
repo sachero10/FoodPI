@@ -1,6 +1,6 @@
 const { Recipe, Diet } = require("../db");
 
-const createRecipe = async () => {
+const createRecipe = async (req, res) => {
   try {
     const { title, image, summary, healthScore, steps, diets } = req.body;
     if (!title || !image || !summary || !healthScore || !steps || !diets)
@@ -18,8 +18,7 @@ const createRecipe = async () => {
       steps,
     });
 
-    // newRecipe.addDiets(diets);
-    newRecipe.addDiets(newDiet);
+    newRecipe.addDiets(newDiet.id);
     return res.status(200).json(newRecipe);
   } catch (error) {
     res.status(400).json({ error: error.message });
