@@ -10,7 +10,7 @@ const getRecipeByName = async (req, res) => {
       return res.status(400).json({ error: "Falta el nombre de la receta" });
     //Consultar en la BD
     const recipe = await Recipe.findAll({
-      where: { title: { [Op.iLike]: `%recipeName%` } },
+      where: { title: { [Op.iLike]: `%${recipeName}%` } },
     });
     //Consultar en la API
     const { data } = await axios(

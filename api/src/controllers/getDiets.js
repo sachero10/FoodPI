@@ -30,6 +30,8 @@ const getDiets = async (req, res) => {
       // return res.status(200).json({dietasFinal2});
       const dietas = await Diet.findAll();
       return res.status(200).json(dietas);
+    } else {
+      return res.status(200).json(dietsDB);
     }
   } catch (error) {
     return res.status(500).json({ error: error.message });
