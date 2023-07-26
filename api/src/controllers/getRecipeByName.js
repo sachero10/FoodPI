@@ -13,10 +13,22 @@ const getRecipeByName = async (req, res) => {
       where: { title: { [Op.iLike]: `%${recipeName}%` } },
     });
     //Consultar en la API
+    // const { data } = await axios(
+    //   `${URL_BASE}complexSearch?titleMatch=${recipeName}&apiKey=${API_KEY}&number=100`
+    // );
     const { data } = await axios(
-      `${URL_BASE}complexSearch?titleMatch=${recipeName}&apiKey=${API_KEY}&number=100`
+      `${URL_BASE}complexSearch?apiKey=${API_KEY}&number=100`
     );
-    return res.status(200).json({ recipe, data });
+    const recipesApi = data.results.filter((receta) =>
+      receta.title.toLowerCase().includes(recipeName.toLowerCase())
+    );
+    if (!recipe.length && !recipesApi.length)
+      return res
+        .status(400)
+        .json({ error: "No se encontraron recetas con ese nombre" });
+    if (!recipe.length) return res.status(200).json({ recipesApi });
+    else if (!recipesApi.length) return res.status(200).json({ recipe });
+    else return res.status(200).json({ recipe, recipesApi });
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
