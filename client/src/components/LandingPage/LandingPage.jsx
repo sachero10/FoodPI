@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
     <div>
       <h1>API FOOD</h1>
-      <button>Entrar</button>
+      <Link to="/home">
+        <button>Entrar</button>
+      </Link>
     </div>
   );
 };
