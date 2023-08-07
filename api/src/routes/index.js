@@ -5,6 +5,7 @@ const getRecipeById = require("../controllers/getRecipeById");
 const getRecipeByName = require("../controllers/getRecipeByName");
 const createRecipe = require("../controllers/createRecipe");
 const getDiets = require("../controllers/getDiets");
+const getRecipes = require("../controllers/getRecipes");
 
 const router = Router();
 
@@ -14,5 +15,6 @@ router.get("/recipes/:id", getRecipeById);
 router.get("/recipes", getRecipeByName);
 router.post("/recipes", createRecipe);
 router.get("/diets", getDiets);
+router.get("/allrecipes", getRecipes);
 
 module.exports = router;
