@@ -7,13 +7,13 @@ const Card = (props) => {
     <div>
       <Link to={`/detail/${id}`}>
         <div>
-          <h2>{title}</h2>
+          <h3>{title}</h3>
           <img src={image} alt="" />
-          <h4>
+          <h5>
             {diets?.map((diet, index) => (
               <div key={index}>{diet}</div>
             ))}
-          </h4>
+          </h5>
         </div>
       </Link>
     </div>

@@ -14,7 +14,7 @@ const Detail = () => {
     return () => {
       dispatch(cleanDetail()); //cuando se desmonta el componente
     };
-  }, [id]); //cuando se actualiza
+  }, [id, dispatch]); //cuando se actualiza
 
   return (
     <div>

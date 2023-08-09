@@ -11,7 +11,7 @@ const Cards = (props) => {
 
   useEffect(() => {
     dispatch(getRecipes());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

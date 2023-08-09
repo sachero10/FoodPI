@@ -6,7 +6,6 @@ import Home from "./components/Home/Home";
 import Detail from "./components/Detail/Detail";
 import Form from "./components/Form/Form";
 import Nav from "./components/Nav/Nav";
-import Cards from "./components/Cards/Cards";
 
 function App() {
   const { pathname } = useLocation();
