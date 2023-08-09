@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
@@ -6,9 +7,13 @@ const Card = (props) => {
     <div>
       <Link to={`/detail/${id}`}>
         <div>
-          <img src={image} alt="" />
           <h2>{title}</h2>
-          <h3>{diets}</h3>
+          <img src={image} alt="" />
+          <h4>
+            {diets?.map((diet, index) => (
+              <div key={index}>{diet}</div>
+            ))}
+          </h4>
         </div>
       </Link>
     </div>
