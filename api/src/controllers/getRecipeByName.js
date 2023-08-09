@@ -17,7 +17,7 @@ const getRecipeByName = async (req, res) => {
     //   `${URL_BASE}complexSearch?titleMatch=${recipeName}&apiKey=${API_KEY}&number=100`
     // );
     const { data } = await axios(
-      `${URL_BASE}complexSearch?apiKey=${API_KEY}&number=100`
+      `${URL_BASE}complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
     );
     const recipesApi = data.results.filter((receta) =>
       receta.title.toLowerCase().includes(recipeName.toLowerCase())
