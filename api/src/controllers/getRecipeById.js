@@ -30,6 +30,7 @@ const getRecipeById = async (req, res) => {
       return res.status(200).json({ recipe });
     } else {
       const recipe2 = await Recipe.findOne({ where: { id: id } });
+      
       if (!recipe2) {
         return res.status(400).json({ error: "No existe el ID de la receta" });
       }

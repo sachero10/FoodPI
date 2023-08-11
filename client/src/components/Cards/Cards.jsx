@@ -25,9 +25,6 @@ const Cards = (props) => {
               title={recipe.title}
               image={recipe.image}
               diets={recipe.diets}
-              // summary={recipe.summary}
-              // healthScore={recipe.healthScore}
-              // steps={recipe.steps}
             />
           );
         })}
@@ -41,9 +38,6 @@ const Cards = (props) => {
               title={recipe.title}
               image={recipe.image}
               diets={recipe.diets}
-              // summary={recipe.summary}
-              // healthScore={recipe.healthScore}
-              // steps={recipe.steps}
             />
           );
         })}
