@@ -6,7 +6,8 @@ import { getRecipes } from "../../redux/actions";
 
 const Cards = (props) => {
   const allRecipes = useSelector((state) => state.allRecipes);
-  // console.log(allRecipes);
+  console.log(allRecipes.recipes); //
+  console.log(allRecipes.recipesBDD); //
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -15,20 +16,38 @@ const Cards = (props) => {
 
   return (
     <div>
-      {allRecipes?.map((recipe) => {
-        return (
-          <Card
-            key={recipe.id}
-            id={recipe.id}
-            title={recipe.title}
-            image={recipe.image}
-            diets={recipe.diets}
-            // summary={recipe.summary}
-            // healthScore={recipe.healthScore}
-            // steps={recipe.steps}
-          />
-        );
-      })}
+      <div>
+        {allRecipes.recipes?.map((recipe) => {
+          return (
+            <Card
+              key={recipe.id}
+              id={recipe.id}
+              title={recipe.title}
+              image={recipe.image}
+              diets={recipe.diets}
+              // summary={recipe.summary}
+              // healthScore={recipe.healthScore}
+              // steps={recipe.steps}
+            />
+          );
+        })}
+      </div>
+      <div>
+        {allRecipes.recipesBDD?.map((recipe) => {
+          return (
+            <Card
+              key={recipe.id}
+              id={recipe.id}
+              title={recipe.title}
+              image={recipe.image}
+              diets={recipe.diets}
+              // summary={recipe.summary}
+              // healthScore={recipe.healthScore}
+              // steps={recipe.steps}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

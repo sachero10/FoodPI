@@ -7,7 +7,9 @@ export const getRecipes = () => {
   return function (dispatch) {
     fetch("http://localhost:3001/allrecipes")
       .then((response) => response.json())
-      .then(({ recipes }) => dispatch({ type: GET_RECIPES, payload: recipes }));
+      .then(({ recipes, recipesBDD }) =>
+        dispatch({ type: GET_RECIPES, payload: { recipes, recipesBDD } })
+      );
   };
 };
 
@@ -15,9 +17,7 @@ export const getRecipeDetail = (id) => {
   return function (dispatch) {
     fetch(`http://localhost:3001/recipes/${id}`)
       .then((response) => response.json())
-      .then(({ recipe }) =>
-        dispatch({ type: GET_RECIPE_DETAIL, payload: recipe })
-      );
+      .then((data) => dispatch({ type: GET_RECIPE_DETAIL, payload: data }));
   };
 };
 

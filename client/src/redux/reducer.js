@@ -23,7 +23,7 @@ const rootReducer = (state = initialState, action) => {
       return { ...state, recipeDetail: {} };
 
     case GET_DIETS:
-      return { state, diets: action.payload };
+      return { ...state, diets: action.payload };
 
     default:
       return { ...state };
