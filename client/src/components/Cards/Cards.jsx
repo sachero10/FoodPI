@@ -6,8 +6,8 @@ import { getRecipes } from "../../redux/actions";
 
 const Cards = (props) => {
   const allRecipes = useSelector((state) => state.allRecipes);
-  console.log(allRecipes.recipes); //
-  console.log(allRecipes.recipesBDD); //
+  // console.log(allRecipes.recipes);
+  // console.log(allRecipes.recipesBDD);
   const dispatch = useDispatch();
 
   useEffect(() => {

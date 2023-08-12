@@ -23,7 +23,7 @@ const Detail = () => {
           {/* {console.log("API")} */}
           {recipe.recipe.title ? (
             <>
-              <h1>Recipe: {recipe.recipe.title}</h1>
+              <h1>{recipe.recipe.title}</h1>
               <img src={recipe.recipe.image} alt="recipe detail" />
               <p>Summary: {recipe.recipe.summary}</p>
               <h3>Health Score: {recipe.recipe.healthScore}</h3>
@@ -48,26 +48,26 @@ const Detail = () => {
         </>
       ) : (
         <>
-          {console.log("BD")}
-          {/* {recipe.recipe2.title ? (
+          {/* {console.log(recipe.recipe2?.title)} */}
+          {recipe.recipe2 ? (
             <>
-              <h1>Recipe: {recipe.recipe2.title}</h1>
+              <h1>{recipe.recipe2.title}</h1>
               <img src={recipe.recipe2.image} alt="recipe detail" />
-              <p>Summary: {recipe.recipe2.summary}</p> */}
-          {/* <h3>Health Score: {recipe.recipe2.healthScore}</h3> */}
-          {/* <div>
+              <p>Summary: {recipe.recipe2.summary}</p>
+              <h3>Health Score: {recipe.recipe2.healthScore}</h3>
+              <div>
                 <h4>Steps: {recipe.recipe2.steps}</h4>
-              </div> */}
-          {/* <div>
-                  <h4>Diets: </h4>
-                  {recipe.diets?.map((diet, index) => (
-                    <p key={index}>{diet}</p>
-                  ))}
-                </div> */}
-          {/* </>
+              </div>
+              <div>
+                <h4>Diets: {recipe.recipe2.Diets[0].name}</h4>
+                {/* {recipe.diets?.map((diet, index) => (
+                  <p key={index}>{diet}</p>
+                ))} */}
+              </div>
+            </>
           ) : (
             <h3>Cargando...</h3>
-          )} */}
+          )}
         </>
       )}
     </div>
